@@ -111,3 +111,15 @@ function calculateFare(obj){
 }
 
 
+// working with search btn 
+document.getElementById('search-btn').addEventListener('click', function(){
+  const searchingElement = document.getElementById('search-field').value
+  for(let service of services){
+    if(searchingElement.toLowerCase() == service.vehicles.toLowerCase()){
+      document.getElementById('services-field').innerHTML = ''
+      ourServices(service)
+      return
+    }
+  }
+})
+
